@@ -53,6 +53,13 @@ header {
     height: 116px;
 }
 
+header #site-logo {
+    width: 150px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: 150px;
+}
+
 /* WordPress Dropdown Menus */
 header .menu-wrapper ul {
 	padding:0px;

@@ -24,7 +24,7 @@
 	<div class="page-wrapper">
     	<div class="top-quick-links"><?php wp_nav_menu(array('theme_location'=>sanitize_title('Top Quick Links'),'container'=>false)); ?></div>
     	<header>
-        	<div class="logo-wrapper"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri();?>/images/dupage-habitat-for-humanity-restore-logo.gif" /></a></div>
+        	<div class="logo-wrapper"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><div id="site-logo"></div></a></div>
             <div class="menu-wrapper"><div class="menu-container">
             	<?php wp_nav_menu(array('theme_location'=>sanitize_title('Header Menu'),'container'=>false, 'walker'=>new Walker_Habitat_Top_Menu())); ?>
             </div></div>
