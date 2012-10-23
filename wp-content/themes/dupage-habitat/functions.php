@@ -305,4 +305,52 @@ function jet4_remove_empty_p_tags($content) {
 	$pattern = "/<p[^>]*><\\/p[^>]*>/"; 
 	return preg_replace($pattern, '', $content); 
 }
+
+
+add_action( 'admin_init', 'theme_options_init' );
+add_action( 'admin_menu', 'theme_options_add_page' ); 
+
+function theme_options_init(){
+ register_setting( 'dupage_habitat_options', 'dupage_habitat_options');
+} 
+
+function theme_options_add_page() {
+ add_theme_page( __( 'Theme Options', 'dupage_habitat' ), __( 'Theme Options', 'dupage_habitat' ), 'edit_theme_options', 'theme_options', 'theme_options_do_page' );
+} 
+
+function theme_options_do_page() { 
+  global $select_options; 
+
+  if ( ! isset( $_REQUEST['settings-updated'] ) ) 
+    $_REQUEST['settings-updated'] = false; 
+
+?>
+<div>
+  <?php screen_icon(); echo "<h2>". __( 'DuPage Habitat Theme Options', 'dupage_habitat' ) . "</h2>"; ?>
+
+  <?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
+    <div>
+      <p><strong><?php _e( 'Options saved', 'dupage_habitat' ); ?></strong></p>
+    </div>
+  <?php endif; ?> 
+
+  <form method="post" action="options.php">
+    <?php settings_fields( 'dupage_habitat_options' ); ?>
+    
+    <?php $options = get_option( 'dupage_habitat_options' ); ?> 
+    <table>
+      <tr valign="top">
+        <th scope="row"><?php _e( 'ShareThis Key', 'dupage_habitat' ); ?></th>
+        <td>
+          <input id="dupage_habitat_options[sharethis_key]" name="dupage_habitat_options[sharethis_key]" type="text" value="<?php esc_attr_e( $options['sharethis_key'] ); ?>"
+        </td>
+      </tr>
+    </table> 
+  
+    <p>
+      <input type="submit" value="<?php _e( 'Save Options', 'dupage_habitat' ); ?>" />
+    </p>
+  </form>
+</div>
+<?php } 
 ?>
