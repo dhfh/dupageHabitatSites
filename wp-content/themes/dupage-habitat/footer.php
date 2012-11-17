@@ -6,9 +6,17 @@
         </footer>
     </div>
 <?php wp_footer(); ?>
-<script>
-var options={ "publisher": "<?php $options = get_option( 'dupage_habitat_options' ); echo $options['sharethis_key'] ?>", "position": "right", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "pinterest", "email", "sharethis"]}};
-var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
-</script>
+
+<?php 
+$options = get_option( 'dupage_habitat_options' ); 
+$sharethis_key = $options['sharethis_key'];
+if($sharethis_key && strlen($sharethis_key) > 0) {
+ ?>
+  <script>
+  var options={ "publisher": "<?php echo $sharethis_key; ?>", "position": "right", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "pinterest", "email", "sharethis"]}};
+  var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+  </script>
+<?php } ?> 
+
 </body>
 </html>
