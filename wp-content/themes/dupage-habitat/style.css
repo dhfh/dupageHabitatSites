@@ -150,7 +150,7 @@ header .menu-wrapper ul li:hover > ul {
 .page-wrapper .ui-tabs .ui-tabs-nav { margin: 0 !important; padding:0 !important; }
 .page-wrapper .ui-tabs .ui-tabs-nav li { list-style: none !important; float: left !important; position: relative !important; top: 0px !important; margin:0 !important; border-bottom: 0 !important; padding: 0 !important; white-space: nowrap !important; margin-right:2px !important; margin-bottom:2px !important; }
 .page-wrapper .ui-tabs .ui-tabs-nav li a { float: left !important; padding: 8px 15px !important; line-height:8px !important; text-decoration: none !important; }
-.page-wrapper .ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0 !important; padding-bottom:0 !important; }
+/* .page-wrapper .ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0 !important; padding-bottom:0 !important; } */
 .page-wrapper .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text !important; }
 .page-wrapper .ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer !important; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
 .page-wrapper .ui-tabs .ui-tabs-panel { display: block !important; border-width: 0 !important; padding:0 !important; background: none !important; clear:both !important; }
